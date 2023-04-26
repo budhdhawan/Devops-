@@ -17,4 +17,6 @@ COPY . .
 EXPOSE 8080
 
 # Start the Node.js application
-CMD [ "npm", "start" ]
+ENTRYPOINT [ "npm", "start" ]
+CMD [ "--port", "8080" ]
+
