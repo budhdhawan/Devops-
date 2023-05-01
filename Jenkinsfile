@@ -19,7 +19,7 @@ sh 'npm install'
 stage('SonarQube analysis') {
 steps {
 withSonarQubeEnv('sonarqube') {
- sh 'sonar-scanner -Dsonar.projectKey=<project_key> -Dsonar.sources=<source_directory> -Dsonar.host.url=<sonarqube_url> -Dsonar.login=<sonarqube_token>'
+ sh 'sonar-scanner'
 }
 }
 }
