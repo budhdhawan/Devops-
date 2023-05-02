@@ -1,5 +1,8 @@
 pipeline {
 agent any
+environment{
+PATH = "${env.PATH}:/opt/sonar-scanner/bin"
+}
 stages {
 stage('Checkout') {
 steps {
@@ -16,7 +19,6 @@ steps {
 sh 'npm install'
 }
 }
-env.PATH = "${env.PATH}:/opt/sonar-scanner/bin"
 stage('SonarQube analysis') {
 steps {
 withSonarQubeEnv('sonarqube') {
