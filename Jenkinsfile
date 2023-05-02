@@ -24,7 +24,7 @@ steps {
 withSonarQubeEnv('sonarqube') {
  sh sonar-scanner \
   -Dsonar.projectKey=myproject \
-  -Dsonar.sources=. \
+  -Dsonar.sources=.\
   -Dsonar.host.url=http://localhost:9000 \
   -Dsonar.login=06aefe274317de33ac00d1140ca3e545f4804066'
 }
