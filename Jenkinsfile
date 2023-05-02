@@ -16,6 +16,7 @@ steps {
 sh 'npm install'
 }
 }
+env.PATH = "${env.PATH}:/opt/sonar-scanner/bin"
 stage('SonarQube analysis') {
 steps {
 withSonarQubeEnv('sonarqube') {
