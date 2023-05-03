@@ -12,6 +12,13 @@ pipeline {
                           userRemoteConfigs: [[url: 'https://github.com/budhdhawan/Devops-.git']]])
             }
         }
+        stage('Test'){
+            steps{
+                withMaven(maven: 'MAVEN'){
+                    sh 'mvn test'
+                }
+            }
+        }
     
         stage('Build and push Docker image') {
             steps {
