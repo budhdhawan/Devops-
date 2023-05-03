@@ -16,7 +16,7 @@ pipeline {
         stage('Build and push Docker image') {
             steps {
                 script {
-                    def dockerImage = docker.build('<your-docker-image-name>:<tag>')
+                    def dockerImage = docker.build('dev:1.0')
                     dockerImage.push()
                 }
             }
