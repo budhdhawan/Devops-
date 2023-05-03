@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sshagent(['<your-ssh-credentials-id>']) {
                     sh 'ssh <your-production-server-username>@<your-production-server-hostname> "docker stop <your-docker-container-name> || true && docker rm <your-docker-container-name> || true"'
-                    sh "ssh <your-production-server-username>@<your-production-server-hostname> 'docker pull <your-docker-image-name>:<tag>'"
+                    sh "ssh <your-production-server-username>@<your-production-server-hostname> 'docker pull dev:1.0'"
                 }
             }
         }
